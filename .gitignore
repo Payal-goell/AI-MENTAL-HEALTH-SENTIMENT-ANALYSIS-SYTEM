@@ -1,0 +1,80 @@
+# =============================================
+# MindCare AI - Root .gitignore
+# =============================================
+
+# --- Large ML Model Files (exceed GitHub 100MB limit - store via Git LFS or cloud) ---
+# To use Git LFS: git lfs track "*.keras" && git lfs track "*.h5"
+backend/Pre-trained_Models/
+*.keras
+*.h5
+*.pkl
+*.pickle
+
+# --- Environment & Secrets (CRITICAL - Never commit these) ---
+.env
+.env.*
+*.env
+!.env.example
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+*.so
+
+# --- Python Virtual Environments ---
+venv/
+env/
+ENV/
+.venv/
+
+# --- SQLite Database (contains user data) ---
+*.db
+*.sqlite
+*.sqlite3
+
+# --- Log Files ---
+*.log
+logs/
+backend_live_debug.log
+debug.log
+debug_behaviour.log
+
+# --- Node.js ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Frontend Build Output ---
+dist/
+dist-ssr/
+*.local
+
+# --- Uploaded user files (potentially sensitive) ---
+backend/uploads/
+
+# --- OS & Editor Files ---
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# --- Jupyter Notebooks (checkpoints) ---
+.ipynb_checkpoints/
+*.ipynb
+
+# --- Coverage & Test artifacts ---
+htmlcov/
+.coverage
+.pytest_cache/

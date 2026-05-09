@@ -1,0 +1,32 @@
+# --- Secrets & Environment Variables (NEVER commit) ---
+.env
+.env.*
+*.env
+!.env.example
+
+# --- Python cache ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# --- Virtual environment ---
+venv/
+env/
+.venv/
+
+# --- Database files (contain user PII) ---
+*.db
+*.sqlite
+*.sqlite3
+
+# --- Log files ---
+*.log
+logs/
+
+# --- User uploaded files (may contain sensitive media) ---
+uploads/
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
