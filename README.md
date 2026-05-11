@@ -63,8 +63,8 @@ The results are fused into a **Final Severity Score** (0–100) and a **Risk Lev
 
 | Step | Module | Technology | Output |
 |------|--------|------------|--------|
-| 1 | Behavioural Test | Scikit-learn (Random Forest / XGBoost) | Risk category + Severity score |
-| 2 | Chat Counselling | OpenRouter / Gemini LLM + VADER/TextBlob NLP | Sentiment, triggers, intensity score |
+| 1 | Behavioural Test | Scikit-learn (Gradient Boosting) | Risk category + Severity score |
+| 2 | Chat Counselling | OpenRouter | Sentiment, triggers, intensity score |
 | 3 | Facial Emotion Detection | ResNet (`.keras`) + OpenCV | Dominant emotion + Confidence |
 | 4 | Voice Emotion Detection | CNN (`.h5`/`.json`) + Librosa | Voice emotion + Stress level |
 | 5 | Final Severity Report | Weighted fusion of all 4 modalities | Risk Level (Low → Critical) |
@@ -75,7 +75,7 @@ The results are fused into a **Final Severity Score** (0–100) and a **Risk Lev
 - **Risk Level Indicator** — Color-coded badge (🟢 Low / 🟡 Moderate / 🟠 High / 🔴 Critical)
 - **Historical Trends** — Area chart showing severity score evolution over time
 - **Modality Score Breakdown** — Individual scores for each of the four AI channels
-- **Dr. MindCare Chatbot** — An empathetic AI therapist powered by OpenRouter/Gemini LLM
+- **Dr. MindCare Chatbot** — An empathetic AI therapist powered by OpenRouter
 - **Daily Wellness Tasks** — Personalized, severity-adaptive task checklist
 - **Mindfulness Breathing Exercises** — Interactive guided breathing animations
 - **YouTube Video Recommendations** — Curated mental health content based on risk profile
@@ -92,7 +92,7 @@ The results are fused into a **Final Severity Score** (0–100) and a **Risk Lev
 
 - **Dark Glassmorphism** design system throughout
 - **Framer Motion** cinematic page transitions and micro-animations
-- **Three.js / React Three Fiber** WebGL background on the landing page
+- **Three.js/React Three Fiber** WebGL background on the landing page
 - **GSAP animations** for scroll-driven reveals
 - **Custom animated cursor** across the entire application
 - **Responsive** layouts for desktop and large screens
@@ -103,30 +103,30 @@ The results are fused into a **Final Severity Score** (0–100) and a **Risk Lev
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                        FRONTEND  (React + Vite)                      │
-│                                                                       │
-│  Landing → Login/Register → Assessment Pipeline → Dashboard          │
-│      │           │               │                    │              │
-│  Three.js    Google OAuth    4 Modality Pages    Recharts / FM        │
-│  WebGL BG    JWT Tokens      (Behaviour, Chat,   Dr. MindCare Bot     │
-│                               Face, Voice)       Daily Tasks          │
+│                        FRONTEND  (React + Vite)                     │
+│                                                                     │
+│  Landing → Login/Register → Assessment Pipeline → Dashboard         │
+│      │           │               │                    │             │
+│  React.js    Google OAuth    4 Modality Pages    Recharts / FM      │
+│  WebGL BG    JWT Tokens      (Behaviour, Chat,   Dr. MindCare Bot   │
+│                               Face, Voice)       Daily Tasks        │
 └───────────────────────────┬─────────────────────────────────────────┘
                             │  HTTP / REST (Axios)
                             │  Port 5173 → 8000
 ┌───────────────────────────▼─────────────────────────────────────────┐
-│                        BACKEND  (FastAPI + Python)                    │
-│                                                                       │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌───────┐  ┌─────────┐  │
-│  │  /auth   │  │/behaviour│  │  /chat   │  │/face  │  │ /voice  │  │
-│  └──────────┘  └──────────┘  └──────────┘  └───────┘  └─────────┘  │
-│  ┌──────────┐  ┌──────────────────────────────────────────────────┐  │
-│  │/severity │  │              /dashboard                           │  │
-│  └──────────┘  └──────────────────────────────────────────────────┘  │
-│                                                                       │
-│  ┌─────────────────────────────────────────────────────────────────┐ │
-│  │                    ML / AI Services Layer                        │ │
-│  │  ml_loader.py │ ai_service.py │ nlp_service.py │ email_service  │ │
-│  └─────────────────────────────────────────────────────────────────┘ │
+│                        BACKEND  (FastAPI + Python)                  │
+│                                                                     │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌───────┐  ┌─────────┐   │
+│  │  /auth   │  │/behaviour│  │  /chat   │  │/face  │  │ /voice  │   │
+│  └──────────┘  └──────────┘  └──────────┘  └───────┘  └─────────┘   │
+│  ┌──────────┐  ┌──────────────────────────────────────────────────┐ │
+│  │/severity │  │              /dashboard                          │ │
+│  └──────────┘  └──────────────────────────────────────────────────┘ │
+│                                                                     │
+│  ┌─────────────────────────────────────────────────────────────────┐│
+│  │                    ML / AI Services Layer                       ││
+│  │  ml_loader.py │ ai_service.py │ nlp_service.py │ email_service  ││
+│  └─────────────────────────────────────────────────────────────────┘│
 └───────────────────────────┬─────────────────────────────────────────┘
                             │
            ┌────────────────┼─────────────────┐
@@ -163,7 +163,7 @@ User Registers/Logs In
 ## 🤖 AI & Machine Learning Models
 
 ### Step 1 — Behavioural Analysis (`Best_Mental_Behaviour_Model.pkl`)
-- **Type:** Scikit-learn ensemble classifier (Random Forest / Gradient Boosting)
+- **Type:** Scikit-learn ensemble classifier (Gradient Boosting)
 - **Input Features:** BMI category, sleep hours, sleep quality, physical activity level, stress level, heart rate, daily steps, systolic BP, diastolic BP
 - **Output:** Risk category (`Low` / `Moderate` / `High`) + confidence score + severity integer (0–100)
 - **Encoders:** `Model_Encoders.pkl` — handles label encoding and one-hot encoding for categorical inputs
