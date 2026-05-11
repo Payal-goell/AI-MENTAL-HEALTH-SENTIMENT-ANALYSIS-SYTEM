@@ -10,6 +10,11 @@ backend/Pre-trained_Models/
 *.pkl
 *.pickle
 
+# --- Large resource archives ---
+*.zip
+*.tar.gz
+*.rar
+
 # --- Environment & Secrets (CRITICAL - Never commit these) ---
 .env
 .env.*
