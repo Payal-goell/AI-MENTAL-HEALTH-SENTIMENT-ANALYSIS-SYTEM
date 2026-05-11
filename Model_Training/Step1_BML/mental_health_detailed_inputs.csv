@@ -1,0 +1,67 @@
+Gender,Occupation,Scenario_Type,Age,BMI_Category,Sleep_Duration,Sleep_Quality,Activity_Level,Stress_Input,Heart_Rate,Daily_Steps,Systolic_BP,Diastolic_BP,PREDICTED_CONDITION,CONFIDENCE_SCORE
+Male,Accountant,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,96.51%
+Male,Accountant,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,Low,65.33%
+Male,Accountant,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,High,99.19%
+Male,Doctor,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,96.04%
+Male,Doctor,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,Low,87.10%
+Male,Doctor,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,High,99.72%
+Male,Engineer,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,96.04%
+Male,Engineer,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,Low,87.10%
+Male,Engineer,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,High,99.72%
+Male,Lawyer,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,76.29%
+Male,Lawyer,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,Low,71.35%
+Male,Lawyer,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,High,99.72%
+Male,Manager,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,97.09%
+Male,Manager,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,Low,50.77%
+Male,Manager,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,High,99.94%
+Male,Nurse,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,94.92%
+Male,Nurse,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,High,91.40%
+Male,Nurse,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,High,99.98%
+Male,Sales_person,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,94.92%
+Male,Sales_person,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,High,91.87%
+Male,Sales_person,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,High,99.99%
+Male,Scientist,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,97.45%
+Male,Scientist,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,High,91.87%
+Male,Scientist,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,High,99.99%
+Male,Software Engineer,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,99.81%
+Male,Software Engineer,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,Medium,99.04%
+Male,Software Engineer,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,Medium,100.00%
+Male,Student,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,99.79%
+Male,Student,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,Medium,99.04%
+Male,Student,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,Medium,100.00%
+Male,Teacher,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,99.87%
+Male,Teacher,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,Medium,99.47%
+Male,Teacher,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,Medium,100.00%
+Female,Accountant,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,96.39%
+Female,Accountant,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,Low,43.83%
+Female,Accountant,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,High,98.16%
+Female,Doctor,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,95.90%
+Female,Doctor,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,Low,66.74%
+Female,Doctor,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,High,99.37%
+Female,Engineer,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,95.90%
+Female,Engineer,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,Low,66.74%
+Female,Engineer,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,High,99.37%
+Female,Lawyer,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,75.62%
+Female,Lawyer,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,High,56.17%
+Female,Lawyer,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,High,99.37%
+Female,Manager,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,97.43%
+Female,Manager,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,High,71.83%
+Female,Manager,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,High,99.83%
+Female,Nurse,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,95.51%
+Female,Nurse,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,High,97.07%
+Female,Nurse,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,High,99.95%
+Female,Sales_person,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,95.51%
+Female,Sales_person,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,High,97.31%
+Female,Sales_person,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,High,99.97%
+Female,Scientist,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,97.75%
+Female,Scientist,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,High,97.31%
+Female,Scientist,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,High,99.97%
+Female,Software Engineer,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,99.76%
+Female,Software Engineer,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,Medium,97.62%
+Female,Software Engineer,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,Medium,99.99%
+Female,Student,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,99.75%
+Female,Student,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,Medium,97.59%
+Female,Student,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,Medium,99.99%
+Female,Teacher,LOW RISK,30,Healthy Weight,8.0,9,80,2,68,10000,115,75,Low,99.84%
+Female,Teacher,MEDIUM RISK,30,Healthy Weight,6.0,6,40,6,78,5000,130,85,Medium,98.67%
+Female,Teacher,HIGH RISK,30,Obese,3.0,2,10,10,110,500,180,110,Medium,100.00%
