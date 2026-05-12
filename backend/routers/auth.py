@@ -189,12 +189,13 @@ async def google_login(req: GoogleLoginRequest, db: Session = Depends(get_db)):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"OAuth Error: {str(e)}")
 
-@router.post("/forgot-password")
+@router.post("/forgot-password", response_model=None)
 def forgot_password(req: ForgotPasswordRequest, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.email == req.email).first()
     if not user:
-        return {"message": "If this email exists, a reset link will be sent"}
-    
+        # Explicit debug error — bypasses generic security message for now
+        return {"error": "User email not found in database"}
+
     otp = str(random.randint(100000, 999999))
     expires = datetime.now(timezone.utc) + timedelta(minutes=10)
 
@@ -218,7 +219,7 @@ def forgot_password(req: ForgotPasswordRequest, db: Session = Depends(get_db)):
     except Exception as e:
         logger.error(f"❌ Email send exception in route (non-fatal): {e}")
 
-    return {"message": "Email sent successfully", "demo_otp": otp}
+    return {"message": "Success", "demo_otp": otp}
 
 @router.post("/verify-otp")
 def verify_otp(req: VerifyOTPRequest, db: Session = Depends(get_db)):
