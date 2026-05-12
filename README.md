@@ -59,6 +59,17 @@ The results are fused into a **Final Severity Score** (0–100) and a **Risk Lev
 
 ---
 
+## 🌐 Live Demo
+
+The project is fully deployed and accessible online. You can test the multimodal AI features without installing anything locally.
+
+- **Frontend Application (Vercel):** [MindCare AI Web App](https://smart-mental-health-counselling-sys.vercel.app)
+- **Backend API & Docs (Hugging Face):** [FastAPI Swagger UI](https://hashmil-muahmmed08-mindcare-backend.hf.space/docs)
+
+*(Note: The backend is hosted on a free Hugging Face Space and may take 1-2 minutes to wake up from sleep upon initial load. The OTP email service is currently in DEMO mode; OTPs are generated and can be viewed in the backend logs or network response).*
+
+---
+
 ## ✨ Key Features
 
 ### 🧪 Multimodal Assessment Pipeline
@@ -234,6 +245,14 @@ User Registers/Logs In
 | ReportLab | 4.2 | PDF generation |
 | Soundfile + Noisereduce | 0.12 / 3.0 | Audio preprocessing |
 | httpx | 0.27 | Async HTTP client (OpenRouter API) |
+
+### Deployment & Infrastructure
+| Technology | Purpose |
+|------------|---------|
+| Vercel | Frontend hosting & CI/CD pipeline |
+| Hugging Face Spaces | Backend hosting (Dockerized FastAPI) |
+| Docker | Containerization for ML backend environment |
+| Git & GitHub | Version control and source code management |
 
 ---
 
