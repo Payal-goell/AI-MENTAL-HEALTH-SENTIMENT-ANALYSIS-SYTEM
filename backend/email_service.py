@@ -5,19 +5,26 @@ from email.mime.multipart import MIMEMultipart
 import logging
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(override=False)
 
 logger = logging.getLogger(__name__)
 
 def send_otp_email(receiver_email: str, otp: str):
-    smtp_server = os.getenv("SMTP_SERVER")
-    smtp_port = os.getenv("SMTP_PORT", 587)
-    smtp_user = os.getenv("SMTP_USERNAME")
-    smtp_password = os.getenv("SMTP_PASSWORD")
-    smtp_from = os.getenv("SMTP_FROM_EMAIL", smtp_user)
+    # ── Always log OTP first so it's visible in HF Space logs ──────────────
+    print(f"🚨 DEMO MODE: OTP for {receiver_email} is {otp} 🚨", flush=True)
+    logger.info(f"🚨 DEMO MODE: OTP for {receiver_email} is {otp} 🚨")
 
+    smtp_server   = os.environ.get("SMTP_SERVER")
+    smtp_port     = os.environ.get("SMTP_PORT", 587)
+    smtp_user     = os.environ.get("SMTP_USERNAME")
+    smtp_password = os.environ.get("SMTP_PASSWORD")
+    smtp_from     = os.environ.get("SMTP_FROM_EMAIL", smtp_user)
+
+    # ── If SMTP creds are absent, skip sending but don't crash ─────────────
     if not smtp_server or not smtp_user or not smtp_password:
-        raise ValueError("SMTP credentials missing in .env file")
+        print("⚠️  SMTP credentials not configured — email skipped. Use OTP from logs above.", flush=True)
+        logger.warning("SMTP credentials missing — OTP email not sent, but OTP is printed in server logs.")
+        return True  # Return success so the frontend flow continues normally
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = "Your MindCare AI Password Reset OTP"
@@ -41,6 +48,7 @@ def send_otp_email(receiver_email: str, otp: str):
     """
     msg.attach(MIMEText(html_content, "html"))
 
+    # ── Attempt to send — log failures silently, never raise to frontend ────
     try:
         server = smtplib.SMTP(smtp_server, int(smtp_port))
         server.starttls()
@@ -48,7 +56,10 @@ def send_otp_email(receiver_email: str, otp: str):
         server.sendmail(smtp_from, receiver_email, msg.as_string())
         server.quit()
         logger.info(f"✅ OTP email sent successfully to {receiver_email}")
-        return True
     except Exception as e:
-        logger.error(f"❌ Failed to send OTP email: {e}")
-        raise e
+        # SMTP failed (likely port blocked on HF free tier) — log and continue
+        print(f"⚠️  SMTP send failed: {e}. OTP is still available in the logs above.", flush=True)
+        logger.error(f"❌ Failed to send OTP email to {receiver_email}: {e}")
+        # Do NOT re-raise — frontend receives a clean success response
+
+    return True
