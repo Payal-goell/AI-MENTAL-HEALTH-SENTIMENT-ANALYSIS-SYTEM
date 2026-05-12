@@ -522,7 +522,7 @@ Here is a glimpse of the MindCare AI platform in action:
 
 | Landing Page |
 | :---: |
-| <img src="assets/1_landing.png" alt="Landing Page" width="450"/> |
+| <img src="assets/1_landing.png" alt="Landing Page" width="800"/> |
 
 | Register Account | Login |
 | :---: | :---: |
@@ -546,7 +546,7 @@ Here is a glimpse of the MindCare AI platform in action:
 
 | Final Assessment Report | Main Dashboard |
 | :---: | :---: |
-| <img src="assets/12_final-report.png" alt="Final Report" width="800"/> |  <img src="assets/13_dashboard.png" alt="Main Dashboard" width="450"/> |
+| <img src="assets/12_final-report.png" alt="Final Report" width="450"/> |  <img src="assets/13_dashboard.png" alt="Main Dashboard" width="450"/> |
 
 ---
 
