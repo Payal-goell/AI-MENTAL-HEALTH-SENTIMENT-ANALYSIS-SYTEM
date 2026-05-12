@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API = axios.create({ baseURL: '/api' })
+const API = axios.create({ baseURL: 'https://hashmil-muahmmed08-mindcare-backend.hf.space' })
 
 // Auto-attach JWT token
 API.interceptors.request.use(config => {

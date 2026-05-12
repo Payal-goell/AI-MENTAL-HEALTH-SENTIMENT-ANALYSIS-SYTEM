@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL || "https://hashmil-muahmmed08-mindcare-backend.hf.space";
+const API_URL = "https://hashmil-muahmmed08-mindcare-backend.hf.space";
 
 const api = axios.create({
   baseURL: API_URL,
