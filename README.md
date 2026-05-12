@@ -522,7 +522,7 @@ Here is a glimpse of the MindCare AI platform in action:
 
 | Landing Page |
 | :---: |
-| <img src="assets/1_landing.png" alt="Landing Page" width="800"/> |
+| <img src="assets/1_landing.png" alt="Landing Page" width="810"/> |
 
 | Register Account | Login |
 | :---: | :---: |
