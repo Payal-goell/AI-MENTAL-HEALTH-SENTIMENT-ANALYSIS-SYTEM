@@ -13,6 +13,8 @@
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
 [![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://smart-mental-health-counselling-sys.vercel.app)
+[![Backend on Hugging Face](https://img.shields.io/badge/Backend-Hugging_Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://hashmil-muahmmed08-mindcare-backend.hf.space/docs)
 
 <br/>
 
