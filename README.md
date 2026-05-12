@@ -518,6 +518,40 @@ The SQLite database (`mindcare.db`) is managed by SQLAlchemy and contains the fo
 
 ---
 
+## 📸 Application Screens
+
+Here is a glimpse of the MindCare AI platform in action:
+
+| Landing Page | Main Dashboard |
+| :---: | :---: |
+| <img src="assets/1_landing.png" alt="Landing Page" width="450"/> | <img src="assets/13_dashboard.png" alt="Main Dashboard" width="450"/> |
+
+| Register Account | Login |
+| :---: | :---: |
+| <img src="assets/3_register.png" alt="Register" width="450"/> | <img src="assets/2_login.png" alt="Login" width="450"/> |
+
+| Behaviour Test Input | Behaviour Test Result |
+| :---: | :---: |
+| <img src="assets/4_behaviour-input.png" alt="Behaviour Input" width="450"/> | <img src="assets/5_behaviour-result.png" alt="Behaviour Result" width="450"/> |
+
+| AI Chat Counselling | Chat Summary |
+| :---: | :---: |
+| <img src="assets/6_chat-counselling.png" alt="Chat Counselling" width="450"/> | <img src="assets/7_chat-summary.png" alt="Chat Summary" width="450"/> |
+
+| Face Emotion (Recording) | Face Emotion (Result) |
+| :---: | :---: |
+| <img src="assets/8_face-emotion-record.png" alt="Face Recording" width="450"/> | <img src="assets/9_face-emotion-result.png" alt="Face Result" width="450"/> |
+
+| Voice Stress (Recording) | Voice Stress (Result) |
+| :---: | :---: |
+| <img src="assets/10_voice-record.png" alt="Voice Recording" width="450"/> | <img src="assets/11_voice-result.png" alt="Voice Result" width="450"/> |
+
+| Final Assessment Report |
+| :---: |
+| <img src="assets/12_final-report.png" alt="Final Report" width="800"/> |
+
+---
+
 ## 🔒 Security & Authentication
 
 - **Password Hashing:** Bcrypt via `passlib` — passwords are never stored in plaintext
