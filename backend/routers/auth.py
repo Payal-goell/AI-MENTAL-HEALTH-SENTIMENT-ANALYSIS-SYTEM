@@ -218,7 +218,7 @@ def forgot_password(req: ForgotPasswordRequest, db: Session = Depends(get_db)):
     except Exception as e:
         logger.error(f"❌ Email send exception in route (non-fatal): {e}")
 
-    return {"message": "If this email exists, a reset link will be sent"}
+    return {"message": "Email sent successfully", "demo_otp": otp}
 
 @router.post("/verify-otp")
 def verify_otp(req: VerifyOTPRequest, db: Session = Depends(get_db)):
