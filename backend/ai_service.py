@@ -8,11 +8,13 @@ import re
 from dotenv import load_dotenv
 
 env_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '.env'))
-load_dotenv(dotenv_path=env_path)
+# override=False ensures real environment variables (e.g. HF Space secrets)
+# always take priority and are never overwritten by a stale .env file
+load_dotenv(dotenv_path=env_path, override=False)
 logger = logging.getLogger(__name__)
 
-# Load API Key
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
+# Load API Key — os.environ.get() reads the live process environment directly
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 
 # --- DEBUGGING BLOCK ---
 print("\n" + "="*60)
@@ -68,7 +70,7 @@ Rules:
 async def call_openrouter(messages: list, system_prompt: str = None, context: dict = None) -> str:
     """Call OpenRouter API with robust retry logic and extended timeouts."""
     if not OPENROUTER_API_KEY or OPENROUTER_API_KEY == "your_openrouter_api_key_here":
-        return "⚠️ **Configuration Error**: Your `OPENROUTER_API_KEY` is missing or invalid in `backend/.env`. Please set it to a valid key and restart the backend server."
+        return "⚠️ **Configuration Error**: The `OPENROUTER_API_KEY` environment variable is missing or invalid. Please set it as a Space secret on Hugging Face and restart the Space."
     
     all_messages = []
     if system_prompt:
@@ -132,7 +134,7 @@ async def call_openrouter(messages: list, system_prompt: str = None, context: di
 async def call_openrouter_stream(messages: list, system_prompt: str = None, context: dict = None):
     """Stream response from OpenRouter API to prevent timeouts and improve UX."""
     if not OPENROUTER_API_KEY or OPENROUTER_API_KEY == "your_openrouter_api_key_here":
-        yield "⚠️ **Configuration Error**: Your `OPENROUTER_API_KEY` is missing or invalid in `backend/.env`. Please set it to a valid key and restart the backend server."
+        yield "⚠️ **Configuration Error**: The `OPENROUTER_API_KEY` environment variable is missing or invalid. Please set it as a Space secret on Hugging Face and restart the Space."
         return
     
     all_messages = []
