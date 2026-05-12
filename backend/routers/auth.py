@@ -1,13 +1,14 @@
 """Auth Router - Register, Login, JWT, Google OAuth."""
 import hashlib
+import logging
 import os
-from datetime import timedelta, datetime, timezone
 import random
+import re
+from datetime import timedelta, datetime, timezone
 from fastapi import APIRouter, Depends, HTTPException, status, Request
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from pydantic import BaseModel, EmailStr, field_validator
-import re
 import httpx
 from database import get_db
 from models import User, PasswordResetOTP
@@ -16,6 +17,7 @@ from passlib.context import CryptContext
 import bcrypt
 from email_service import send_otp_email
 
+logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/auth", tags=["auth"])
 # Using bcrypt directly to avoid passlib/bcrypt 4.0+ compatibility issues
 # pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -195,7 +197,10 @@ def forgot_password(req: ForgotPasswordRequest, db: Session = Depends(get_db)):
     
     otp = str(random.randint(100000, 999999))
     expires = datetime.now(timezone.utc) + timedelta(minutes=10)
-    
+
+    # ── Log OTP immediately — visible in Uvicorn/HF Space logs at WARNING level ──
+    logger.warning(f"🚨 DEMO MODE: OTP for requested email is {otp} 🚨")
+
     existing_otp = db.query(PasswordResetOTP).filter(PasswordResetOTP.email == req.email).first()
     if existing_otp:
         existing_otp.otp = otp
@@ -203,14 +208,16 @@ def forgot_password(req: ForgotPasswordRequest, db: Session = Depends(get_db)):
     else:
         new_otp = PasswordResetOTP(email=req.email, otp=otp, expires_at=expires)
         db.add(new_otp)
-    
+
+    # Commit OTP to DB first — guaranteed even if email sending fails
+    db.commit()
+
+    # Attempt email — failures are logged silently, never returned as 500
     try:
         send_otp_email(req.email, otp)
-        db.commit()
     except Exception as e:
-        db.rollback()
-        raise HTTPException(status_code=500, detail="Failed to send email. Check SMTP setup.")
-    
+        logger.error(f"❌ Email send exception in route (non-fatal): {e}")
+
     return {"message": "If this email exists, a reset link will be sent"}
 
 @router.post("/verify-otp")
