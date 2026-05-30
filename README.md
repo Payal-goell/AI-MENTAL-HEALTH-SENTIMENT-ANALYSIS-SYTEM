@@ -26,6 +26,18 @@
 
 </div>
 
+---
+
+### 🎥 Project Working Demo
+
+https://github.com/user-attachments/assets/af17f69e-6d1a-4be5-aa71-79579b7e0fb5
+
+<div align="center">
+  <em>▶ MINDCARE-AI - Complete Project Walkthrough (Click Play to watch)</em>
+</div>
+
+---
+
 ## 📋 Table of Contents
 
 - [🌟 Project Overview](#-project-overview)
