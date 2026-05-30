@@ -26,8 +26,6 @@
 
 </div>
 
----
-
 ### 🎥 Project Working Demo
 
 https://github.com/user-attachments/assets/af17f69e-6d1a-4be5-aa71-79579b7e0fb5
