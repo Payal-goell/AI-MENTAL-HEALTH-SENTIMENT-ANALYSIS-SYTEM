@@ -19,7 +19,7 @@ DEFAULT_TASKS = [
     "10-minute breathing exercise",
     "Write 1 positive thought",
     "15-minute walk or light exercise",
-    "Connect with a friend or family member"
+    
 ]
 
 class DoctorMessageRequest(BaseModel):
