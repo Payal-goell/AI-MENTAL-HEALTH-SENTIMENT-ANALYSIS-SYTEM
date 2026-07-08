@@ -38,8 +38,8 @@ class RegisterRequest(BaseModel):
 
     @field_validator('age')
     def validate_age(cls, v):
-        if not (10 <= v <= 100):
-            raise ValueError("Age must be between 10 and 100")
+        if not (18 <= v <= 100):
+            raise ValueError("Age must be between 18 and 100")
         return v
 
     @field_validator('phone')
